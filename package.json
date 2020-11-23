@@ -1,0 +1,53 @@
+{
+  "name": "Table",
+  "version": "1.0.0",
+  "author": "czchen.clarence",
+  "description": "A Table UI design with React by czchen.clarence",
+  "keywords": [
+    "table",
+    "react",
+    "ui"
+  ],
+  "main": "lib/Table.cjs.js",
+  "module": "es/Table.esm.js",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "clean": "rimraf dist es lib test/dist",
+    "start": "npm run clean && cross-env NODE_ENV=development rollup -w -c",
+    "build": "npm run clean && cross-env NODE_ENV=production rollup -c"
+  },
+  "dependencies": {
+    "ahooks": "^2.8.1",
+    "classnames": "^2.2.6",
+    "moment": "^2.29.1",
+    "object.omit": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/helpers": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "cross-env": "^7.0.2",
+    "less": "^3.12.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.29.0",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-serve": "^1.0.4",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
+}

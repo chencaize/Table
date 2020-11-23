@@ -1,0 +1,30 @@
+@contextMenuBackgroundColor:#ebebeb;//菜单背景色
+@contextMenuWidth:120px;//菜单宽度
+@borderStyle:1px solid #cfcfcf;//菜单边框样式
+@contextMenuBoxShadow:#ebebeb;//菜单阴影样式
+@contextMenuHoverBackgroundColor:#2277a2;//菜单子元素悬停背景色
+@contextMenuHoverColor:#FFFFFF;//菜单子元素悬停字体颜色
+@contextMenuDisableColor:#cfcfcf;//菜单子元素不可选择颜色
+
+.edb-table-contextMenu{
+    position: absolute;
+    background-color: @contextMenuBackgroundColor;
+    width:@contextMenuWidth;
+    border:@borderStyle;
+    box-shadow: @contextMenuBoxShadow;
+    z-index: 50;
+    .edb-table-contextMenu-item{
+        padding:5px;
+        span{
+            padding-left: 10px;
+        }
+    }
+    .edb-table-contextMenu-item-disable{
+        color:@contextMenuDisableColor;
+    }
+    .edb-table-contextMenu-item:hover{
+        background-color:@contextMenuHoverBackgroundColor;
+        color:@contextMenuHoverColor;
+        cursor: context-menu;
+    }
+}

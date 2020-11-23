@@ -1,0 +1,202 @@
+@borderStyle:solid #cfcfcf;//表格边框样式
+@backgroundColor:#FFFFFF;//整体背景色
+@colAndFixedBackgroundColor:#e8e8e9;//表头及固定列背景色
+@resizeSelectBackgroundColor:#000000;//列宽调整选中列竖线背景色
+@tdBackgroundColor:#FFFFFB;//单元格默认背景色
+@tdSelectBackgroundColor:#2277a2;//单元格,行,列选中背景色
+@tdSelectcolor:#FFFFFF;//单元格,行,列选中字体颜色
+
+
+.EDBTable{
+    height: 100%;
+    width:100%;
+    margin:10px;
+    background-color:@backgroundColor;
+    position: relative;//使用相对定位,让滚动条可以根据这个做绝对定位
+
+    .edb-content{
+        overflow-y: hidden;//隐藏默认y轴滚动条
+        overflow-x: auto;
+        background-color:@backgroundColor;
+
+        .edb-table-vertical{
+            table-layout: fixed;
+            border-spacing: 0;//去掉默认表格边框
+            writing-mode: vertical-lr;//行列互换
+
+            thead{
+                tr{
+                    th{
+                        position: sticky;//粘贴属性,用于固定行列
+                        background: @colAndFixedBackgroundColor;
+                        border: 1px @borderStyle;
+                        border-bottom: 0px;
+
+                        .edb-table-thead-tr-th-content{
+                            white-space:nowrap; 
+                            overflow:hidden; 
+                            text-overflow:ellipsis;
+                            writing-mode: horizontal-tb;//将行列互换后,需要将div更换回正常模式,否则字会垂直
+                        }
+                    }
+                    th:nth-last-child(1){
+                        border-bottom:1px @borderStyle;
+                    }
+                }
+            }
+
+            tbody{
+                tr{
+                    td{
+                        border-top: 1px @borderStyle;
+                        border-left:1px @borderStyle;
+                        background-color:  @tdBackgroundColor;
+
+                        .edb-table-tbody-tr-td-content{
+                            white-space:nowrap; 
+                            overflow:hidden; 
+                            text-overflow:ellipsis;
+                            writing-mode: horizontal-tb;
+                        }
+                    }
+                    td:nth-last-child(1){
+                        border-bottom: 1px @borderStyle;
+                    }
+                }
+                tr:nth-last-child(1){
+                    td{
+                        border-right: 1px @borderStyle;
+                    }
+                }
+            }
+        }
+
+        .edb-table{
+            table-layout: fixed;
+            border-spacing: 0; 
+            display: block;
+
+            thead{
+                tr{
+                    .edb-table-thead-tr-sticky{
+                        z-index: 30;
+                    }
+                    th{
+                        position: sticky;
+                        top:0;
+                        background: @colAndFixedBackgroundColor;
+                        z-index: 20;
+                        border: 1px @borderStyle;
+                        border-right: 0px;
+                        
+                        .edb-table-thead-tr-th-content{
+                            white-space:nowrap; 
+                            overflow:hidden; 
+                            text-overflow:ellipsis;
+                            display: block;
+                        }
+
+                        .edb-table-thead-tr-th-colResize{
+                            cursor: col-resize;//鼠标指针样式
+                            position: absolute;
+                            top: 0;
+                            width: 5px;
+                        }
+                        .edb-table-thead-tr-th-colResize-selected{
+                            border-right:1px dashed @resizeSelectBackgroundColor;
+                            z-index: 40;
+                        }
+
+                        .edb-table-thead-tr-th-sortCol{
+                            cursor: pointer;
+                        }
+
+                    }
+                    th:nth-last-child(1){
+                        border-right:1px @borderStyle;
+                    }
+                }
+            }
+
+            tbody{
+                tr{
+                    .edb-table-tbody-tr-sticky{
+                        position: sticky;
+                        background: @colAndFixedBackgroundColor;
+                        z-index: 10;
+                    }
+
+                    .edb-table-tbody-tr-selected{
+                        background-color:@tdSelectBackgroundColor;
+                        color:@tdSelectcolor;
+                    }
+
+                    td{
+                        z-index: 1;
+                        border-bottom: 1px @borderStyle;
+                        border-left:1px @borderStyle;
+                        background-color: @tdBackgroundColor;
+
+                        .edb-table-tbody-tr-td-content{
+                            white-space:nowrap; 
+                            overflow:hidden; 
+                            text-overflow:ellipsis;
+                            .edb-table-tbody-tr-td-content-input{
+                                height: 100%;
+                                width: 100%;
+                                line-height: 100%;
+                                padding: 0px;
+                                border: 0px;
+                            }
+                            input:focus{
+                                outline: medium;//去除input点击边框
+                            }
+                        }
+                    }
+                    td:nth-last-child(1){
+                        border-right: 1px @borderStyle;
+                    }
+                }
+            }
+
+            .edb-table-alignLeft{
+                text-align: left;
+            }
+
+            .edb-table-alignCenter{
+                text-align: center;
+            }
+
+            .edb-table-alignRight{
+                text-align: right;
+            }
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background: transparent;
+    }
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    ::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background-color: hsla(0,0%,63.9%,.7);
+        border: 1px solid transparent;
+        background-clip: padding-box;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: #b7b7b7;
+        border: 2px solid transparent;
+    }
+    ::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

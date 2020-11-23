@@ -1,0 +1,31 @@
+//全局变量
+
+const DEFAULT_COL_WIDTH = 120;//默认列宽度
+const DEFAULT_ROW_HEIGHT = 30;//默认行高度
+const DEFAULT_ROW_COUNT = 10;//默认展示行数
+const DEFAULT_SCROLL_WIDTH = 10;//默认滚动条宽度
+const DEFAULT_SCROLL_MIN_HEIGHT = 0.1;//默认滚动条最小百分比
+const DEFAULT_SORT_ASCEND = "ascend";//排序升序
+const DEFAULT_SORT_DESCEND = "descend";//排序降序
+const DEFAULT_SORT_DIRECTION = [DEFAULT_SORT_ASCEND, DEFAULT_SORT_DESCEND, false];//默认排序选项
+const DEFAULT_SELECT_SINGLE = "single";//单元格选中
+const DEFAULT_SELECT_ROW = "row";//行选中
+const DEFAULT_SELECT_COL = "col";//列选中
+const SEQUENCE_NAME = "edb-table-index";//序号列
+const SORTER_ORDER = "sorter-order";//初始排序索引
+
+export {
+    DEFAULT_COL_WIDTH,
+    DEFAULT_ROW_HEIGHT,
+    DEFAULT_ROW_COUNT,
+    SEQUENCE_NAME,
+    SORTER_ORDER,
+    DEFAULT_SCROLL_WIDTH,
+    DEFAULT_SCROLL_MIN_HEIGHT,
+    DEFAULT_SORT_ASCEND,
+    DEFAULT_SORT_DESCEND,
+    DEFAULT_SORT_DIRECTION,
+    DEFAULT_SELECT_SINGLE,
+    DEFAULT_SELECT_ROW,
+    DEFAULT_SELECT_COL
+}
