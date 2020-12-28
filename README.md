@@ -1,11 +1,11 @@
-基于React生态系统,开发的一套table组件
+参考antd design table,基于React生态系统,开发的一套table组件
 
-##目录
+## 目录
 * [工程结构](#structure)
 * [打包方法](#package)
 * [使用方法](#usage)
 
-##工程结构
+## 工程结构
 ```
 .
 ├── dist                              # umd文件
@@ -25,7 +25,7 @@
 ├── test                              # 主程序测试目录
 ```
 
-##打包方法
+## 打包方法
 ``` javascript
 //安装程序包
 $ npm install
@@ -35,7 +35,7 @@ $ npm run start
 $ npm run build
 ```
 
-##使用方法
+## 使用方法
 ``` javascript
 import { Table } from "Table";
 let columns = [
